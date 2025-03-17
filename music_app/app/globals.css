@@ -121,3 +121,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+.music-app-gradient-pink {
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+}
+
+.music-app-gradient-blue {
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+}
+
+.card-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.card-hover-effect:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
