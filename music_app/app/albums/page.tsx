@@ -1,9 +1,47 @@
 import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { User2 } from "lucide-react";
+import Link from "next/link";
 
-export default function AlbumPage() {
+export default async function AlbumPage() {
+  const artists = [
+    {
+      idArtist: "112024",
+      strArtist: "The Weeknd",
+      strLabel: "Republic Records",
+    },
+  ];
+
   return (
-    <main>
-      <Button>Album Page</Button>
+    <main className="flex-1 overflow-auto">
+      {artists.map((artist) => (
+        <TooltipProvider key={artist.idArtist}>
+          <Tooltip>
+            <TooltipTrigger>
+              <Button
+                key={artist.idArtist}
+                className="w-full flex justify-start"
+                variant={"outline"}
+                asChild
+              >
+                <Link href={`/albums/${artist.idArtist}`}>
+                  <User2 />
+                  <p>Name: {artist.strArtist} </p>
+                  <p className="ml-20">Label: {artist.strLabel} </p>
+                </Link>
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Click to view all albums by {artist.strArtist}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      ))}
     </main>
   );
 }
