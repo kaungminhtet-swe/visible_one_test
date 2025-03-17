@@ -71,7 +71,7 @@ export default function MusicVidoeList({ tracks }: TrackListProps) {
   });
 
   return (
-    <ScrollArea className="h-9/12">
+    <ScrollArea className="h-10/12">
       <div className="m-1 flex flex-col sm:flex-row justify-between gap-4">
         <div className="relative w-full sm:w-64">
           <Input
