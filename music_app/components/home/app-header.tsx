@@ -5,7 +5,7 @@ import { Input } from "../ui/input";
 
 export default function AppHeader() {
   return (
-    <div className="flex justify-between items-center mb-6">
+    <div className="flex justify-between items-center">
       <div className="relative w-64">
         <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
         <Input

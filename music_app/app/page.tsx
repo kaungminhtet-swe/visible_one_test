@@ -8,28 +8,29 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function MusicApp() {
   return (
-    <div className="w-screen h-screen flex flex-col">
-      <main className="flex flex-1 overflow-hidden">
+    <div className="w-screen h-screen flex flex-col bg-pink-500">
+      <main className="bg-white flex flex-1 overflow-hidden rounded-b-4xl border-0 shadow-xl">
         <Sidebar />
+        <div className="h-screen w-full flex flex-col gap-1 p-3 overflow-auto">
+          <AppHeader />
+          <div className="flex-1 overflow-auto">
+            <ScrollArea className="h-full">
+              <div className="m-3 grid grid-cols-2 gap-8 mb-8">
+                <MusicCard
+                  title="GET LOST"
+                  description="in your music."
+                  color="pink"
+                />
+                <MusicCard title="MELLOW" description="beats." color="blue" />
+              </div>
 
-        <ScrollArea className="flex-1 ml-2">
-          <div className="p-4">
-            <AppHeader />
-
-            <div className="h-max grid grid-cols-2 gap-8 mb-8">
-              <MusicCard
-                title="GET LOST"
-                description="in your music."
-                color="pink"
-              />
-              <MusicCard title="MELLOW" description="beats." color="blue" />
-            </div>
-
-            <RecentPlayedMusic />
-
-            <RecommendedMusics />
+              <div className="grid grid-cols-2 gap-8 mb-8">
+                <RecentPlayedMusic />
+                <RecommendedMusics />
+              </div>
+            </ScrollArea>
           </div>
-        </ScrollArea>
+        </div>
       </main>
       <PlayerBar />
     </div>
