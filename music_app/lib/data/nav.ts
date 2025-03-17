@@ -1,5 +1,5 @@
 import type { LucideProps } from "lucide-react";
-import { Home, ListMusic, MusicIcon, User } from "lucide-react";
+import { Home, ListMusic, User, VideoIcon } from "lucide-react";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
 
 export interface INavData {
@@ -28,9 +28,9 @@ export async function getNavData(): Promise<INavData[]> {
       Icon: ListMusic,
     },
     {
-      name: "Songs",
-      href: "/songs",
-      Icon: MusicIcon,
+      name: "Music Videos",
+      href: "/music-videos",
+      Icon: VideoIcon,
     },
   ];
 }
