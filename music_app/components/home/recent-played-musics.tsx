@@ -4,7 +4,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
-import { Heart, MoreHorizontal } from "lucide-react";
+import { Heart, MoreHorizontal, VideoIcon } from "lucide-react";
 import { Button } from "../ui/button";
 
 export default function RecentPlayedMusic() {
@@ -32,10 +32,12 @@ export default function RecentPlayedMusic() {
         ].map((track) => (
           <div
             key={`index ${track.title}`}
-            className="flex items-center justify-between py-2 px-1 hover:bg-gray-50 rounded-md"
+            className="flex items-center justify-between py-2 px-1 hover:bg-gray-100 rounded-md"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gray-200 rounded" />
+              <Button size={"icon"} className="">
+                <VideoIcon />
+              </Button>
               <div>
                 <p className="font-medium">{track.title}</p>
                 <p className="text-sm text-gray-500">{track.artist}</p>
