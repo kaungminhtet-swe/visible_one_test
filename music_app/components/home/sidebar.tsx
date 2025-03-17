@@ -22,7 +22,10 @@ export default function Sidebar() {
     <div className="w-60 bg-gray-100 flex flex-col border-r">
       <div className="p-5 flex items-center gap-3">
         <Avatar className="w-10 h-10 border">
-          <AvatarImage src="/placeholder-user.jpg" alt="Joshua" />
+          <AvatarImage
+            // src="/placeholder-user.jpg"
+            alt="Joshua"
+          />
           <AvatarFallback>J</AvatarFallback>
         </Avatar>
         <div>

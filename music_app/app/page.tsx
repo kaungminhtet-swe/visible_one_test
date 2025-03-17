@@ -19,9 +19,13 @@ export default function MusicApp() {
                 <MusicCard
                   title="GET LOST"
                   description="in your music."
-                  color="pink"
+                  className="from-pink-400 to-pink-600 hover:shadow-pink-400"
                 />
-                <MusicCard title="MELLOW" description="beats." color="blue" />
+                <MusicCard
+                  title="MELLOW"
+                  description="beats."
+                  className="from-blue-400 to-blue-600 hover:shadow-blue-400"
+                />
               </div>
 
               <div className="grid grid-cols-2 gap-8 mb-8">

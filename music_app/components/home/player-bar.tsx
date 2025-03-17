@@ -24,7 +24,7 @@ export default function PlayerBar() {
       <div className="flex items-center gap-3 w-1/4">
         <Avatar className="w-12 h-12 rounded-full">
           <AvatarImage
-            src="/placeholder.svg?height=48&width=48"
+            // src="""
             alt="Album cover"
           />
           <AvatarFallback className="bg-pink-400">MB</AvatarFallback>

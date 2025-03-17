@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Play } from "lucide-react";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
@@ -5,22 +6,25 @@ import { Card, CardContent } from "../ui/card";
 interface MusicCardProps {
   title: string;
   description: string;
-  color: string;
+  className?: string;
 }
 
 export default function MusicCard({
   title,
   description,
-  color,
+  className,
 }: MusicCardProps) {
   return (
     <Card
-      className={`h-64 from-${color}-400 to-${color}-600 p-0 bg-gradient-to-br  overflow-hidden border-0 rounded-3xl shadow-md group transition-all duration-300 hover:shadow-lg hover:shadow-${color}-400 hover:scale-[1.03] transform`}
+      className={cn(
+        className,
+        "h-54 p-0 bg-gradient-to-br  overflow-hidden border-0 rounded-3xl shadow-md group transition-all duration-300 hover:shadow-lg hover:scale-[1.03] transform"
+      )}
     >
       <CardContent className="p-0 flex flex-col justify-between h-full">
         <div className="relative flex flex-col p-6">
           <h2 className="text-5xl font-bold text-white">{title}</h2>
-          <p className="text-2xl text-pink-200">{description}</p>
+          <p className="text-2xl text-gray-200">{description}</p>
         </div>
         <div className="absolute h-full w-full flex flex-col-reverse">
           <Button
