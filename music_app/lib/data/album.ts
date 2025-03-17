@@ -3,3 +3,9 @@ export async function fetchAlbumsByArtist(artistId: string) {
   const data = await response.json();
   return data.album;
 }
+
+export async function fetchAlbumById(albumId: string) {
+  const response = await fetch(`${process.env.ALBUM_URL}?m=${albumId}`);
+  const data = await response.json();
+  return data.album[0];
+}

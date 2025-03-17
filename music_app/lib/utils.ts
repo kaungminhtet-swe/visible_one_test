@@ -23,3 +23,12 @@ export function fallbackName(fullname: string): string {
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+export function convertMillisecondsToMinutesSeconds(duration: string) {
+  const milliseconds = Number(duration);
+  const totalSeconds = Math.floor(milliseconds / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+
+  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+}

@@ -18,7 +18,8 @@ export default async function AlbumPage() {
   ];
 
   return (
-    <main className="flex-1 overflow-auto">
+    <main className="flex-1 overflow-auto pt-2">
+      <h1 className="text-3xl font-bold mb-6">Albums</h1>
       {artists.map((artist) => (
         <TooltipProvider key={artist.idArtist}>
           <Tooltip>
@@ -29,7 +30,7 @@ export default async function AlbumPage() {
                 variant={"outline"}
                 asChild
               >
-                <Link href={`/albums/${artist.idArtist}`}>
+                <Link href={`/artists/${artist.idArtist}/albums`}>
                   <User2 />
                   <p>Name: {artist.strArtist} </p>
                   <p className="ml-20">Label: {artist.strLabel} </p>

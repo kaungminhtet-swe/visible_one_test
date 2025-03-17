@@ -15,9 +15,11 @@ import {
 } from "@/components/ui/dialog";
 import { Album } from "@/types/album";
 import { Calendar, Disc, Music } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function AlbumCard({ album }: { album: Album }) {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
   const paragraphs = album.strDescriptionEN
@@ -26,15 +28,16 @@ export default function AlbumCard({ album }: { album: Album }) {
 
   return (
     <>
-      <Card className="h-full overflow-hidden border-zinc-800 bg-zinc-900 hover:bg-zinc-800 transition-colors">
+      <Card
+        onClick={() =>
+          router.push(`/artists/${album.idArtist}/albums/${album.idAlbum}`)
+        }
+        className="h-full overflow-hidden border-zinc-800 bg-zinc-900 hover:bg-zinc-800 transition-colors"
+      >
         <CardHeader className="p-0">
           <div className="relative aspect-square overflow-hidden">
             <img
-              src={
-                album.strAlbumThumb ||
-                album.strAlbum3DThumb ||
-                "/api/placeholder/400/400"
-              }
+              src={album.strAlbumThumb || album.strAlbum3DThumb || undefined}
               alt={album.strAlbum}
               className="h-full w-full object-cover transition-transform hover:scale-105 duration-300"
             />
@@ -55,21 +58,16 @@ export default function AlbumCard({ album }: { album: Album }) {
         <CardFooter className="p-4 pt-0 flex justify-between">
           <div className="flex gap-2">
             {album.strGenre && (
-              <Badge variant="outline" className="bg-transparent">
+              <Badge variant="outline" className="text-white bg-transparent">
                 {album.strGenre}
               </Badge>
             )}
             {album.strMood && (
-              <Badge variant="outline" className="bg-transparent">
+              <Badge variant="outline" className="text-white bg-transparent">
                 {album.strMood}
               </Badge>
             )}
           </div>
-          {/* <DialogTrigger asChild onClick={() => setIsOpen(true)}>
-            <button className="rounded-full p-2 bg-zinc-800 hover:bg-zinc-700 transition-colors">
-              <Info className="h-4 w-4 text-zinc-300" />
-            </button>
-          </DialogTrigger> */}
         </CardFooter>
       </Card>
 
@@ -92,9 +90,7 @@ export default function AlbumCard({ album }: { album: Album }) {
                 ) : (
                   <img
                     src={
-                      album.strAlbumThumb ||
-                      album.strAlbum3DThumb ||
-                      "/api/placeholder/400/400"
+                      album.strAlbumThumb || album.strAlbum3DThumb || undefined
                     }
                     alt={album.strAlbum}
                     className="h-full w-full object-cover"
@@ -116,21 +112,15 @@ export default function AlbumCard({ album }: { album: Album }) {
                     {album.strReleaseFormat}
                   </span>
                 </div>
-                <div className="flex flex-wrap gap-2 mt-3">
+                <div className="flex flex-wrap gap-2 mt-3 text-white">
                   {album.strGenre && (
-                    <Badge variant="outline" className="bg-transparent">
-                      {album.strGenre}
-                    </Badge>
+                    <Badge className="bg-transparent">{album.strGenre}</Badge>
                   )}
                   {album.strMood && (
-                    <Badge variant="outline" className="bg-transparent">
-                      {album.strMood}
-                    </Badge>
+                    <Badge className="bg-transparent">{album.strMood}</Badge>
                   )}
                   {album.strSpeed && (
-                    <Badge variant="outline" className="bg-transparent">
-                      {album.strSpeed}
-                    </Badge>
+                    <Badge className="bg-transparent">{album.strSpeed}</Badge>
                   )}
                 </div>
               </div>

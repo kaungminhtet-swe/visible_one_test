@@ -33,7 +33,7 @@ export default function RootLayout({
         <div className="w-screen h-screen flex flex-col bg-pink-500">
           <div className="bg-white flex flex-1 overflow-hidden rounded-b-4xl border-0 shadow-xl">
             <AppSidebar />
-            <div className="h-screen w-full flex flex-col gap-1 p-3 overflow-auto">
+            <div className="h-screen w-full flex flex-col gap-1 p-3">
               <AppHeader />
               {children}
             </div>
