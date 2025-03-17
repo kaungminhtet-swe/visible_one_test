@@ -37,7 +37,7 @@ export default function AlbumDetail({
 
   return (
     <div className="h-screen bg-black overflow-hidden text-white">
-      <ScrollArea className="h-5/6">
+      <ScrollArea className="h-11/12">
         <div className="relative h-96 bg-gradient-to-b from-zinc-800 to-black">
           <div
             className="absolute inset-0 opacity-30 bg-cover bg-center"

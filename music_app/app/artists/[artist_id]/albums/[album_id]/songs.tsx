@@ -9,7 +9,7 @@ import { Play } from "lucide-react";
 
 export default function Songs({ songs }: { songs: Song[] }) {
   return (
-    <TabsContent value="songs" className="space-y-8">
+    <TabsContent value="songs" className="w-full space-y-8">
       <div className="mt-8">
         <h2 className="text-2xl font-semibold mb-4">Songs</h2>
         <Card className="bg-zinc-900 border-zinc-800 text-white">

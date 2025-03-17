@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="w-screen h-screen flex flex-col bg-pink-500">
-          <div className="bg-white flex flex-1 overflow-hidden rounded-b-4xl border-0 shadow-xl">
+          <div className="w-screen bg-white flex flex-1 overflow-hidden rounded-b-4xl border-0 shadow-xl">
             <AppSidebar />
             {children}
           </div>

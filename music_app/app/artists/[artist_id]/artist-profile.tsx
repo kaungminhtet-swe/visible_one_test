@@ -7,12 +7,12 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, ExternalLink, MapPin, Music } from "lucide-react";
-import { Artist } from "../types";
+import { Artist } from "@/types/artist";
 
 export default function ArtistProfile({ artist }: { artist: Artist }) {
   return (
-    <div className="h-screen flex-1 overflow-auto bg-black text-white">
-      <ScrollArea className="h-full">
+    <div className="h-screen flex-1 bg-black text-white">
+      <ScrollArea className="h-11/12">
         <div
           className="relative h-96 bg-cover bg-center"
           style={{

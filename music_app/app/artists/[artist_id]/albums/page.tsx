@@ -12,7 +12,7 @@ export default async function AlbumPage({
   const albums: Album[] = await fetchAlbumsByArtist(artistId);
 
   return (
-    <div className="h-screen container mx-auto px-4 py-8 bg-white">
+    <div className="flex-1 h-screen container mx-auto px-4 py-8 bg-white">
       <ScrollArea className="h-10/12">
         <h1 className="text-3xl font-bold mb-8">Albums</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">

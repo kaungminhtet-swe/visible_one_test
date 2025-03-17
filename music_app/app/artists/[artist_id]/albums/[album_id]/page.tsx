@@ -11,7 +11,7 @@ export default async function AlbumPage({
   const songs = await fetchSongs((await params).album_id);
 
   return (
-    <main className="h-screen">
+    <main className="flex-1 h-screen">
       <AlbumDetail album={album} songs={songs} />
     </main>
   );
