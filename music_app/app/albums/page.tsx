@@ -18,7 +18,7 @@ export default async function AlbumPage() {
   ];
 
   return (
-    <main className="flex-1 overflow-auto pt-2">
+    <main className="flex-1 overflow-auto p-2">
       <h1 className="text-3xl font-bold mb-6">Albums</h1>
       {artists.map((artist) => (
         <TooltipProvider key={artist.idArtist}>
