@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "News",
-  description: "Responsive layout",
+  title: "News & Travel Website",
+  description: "A modern news and travel website",
 };
 
 export default function RootLayout({
