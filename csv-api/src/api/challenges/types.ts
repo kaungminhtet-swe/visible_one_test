@@ -1,4 +1,4 @@
-export interface CSVChallenge {
+export interface IChallenge {
   id: string;
   name: string;
   successRate: string;
