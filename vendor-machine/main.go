@@ -66,8 +66,6 @@ loop:
 			fmt.Println("Select more drinks? (y/n)")
 			fmt.Scan(&needMordDrinks)
 
-			fmt.Println(needMordDrinks)
-
 			if needMordDrinks == "y" || needMordDrinks == "yes" {
 				state = SELECT_DRINK
 				break
@@ -82,7 +80,7 @@ loop:
 			for i, drink := range purchasedDrinks {
 				fmt.Printf("%d) %s \n", i+1, drink)
 			}
-			fmt.Println("Your change is $%.2f", initailPrice)
+			fmt.Printf("Ramming bill is $%.2f", initailPrice)
 			break loop
 
 		case NOT_ENOUGH_MONEY:
