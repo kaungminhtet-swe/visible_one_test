@@ -19,7 +19,10 @@ if (!fs.existsSync('uploads/')) {
   fs.mkdirSync('uploads/');
 }
 
+// upload csv file /upload-csv
 app.post('/upload-csv', upload.single('csvFile'), uploadCSVFile);
+
+// api/v1/challenges
 app.use(challengeRouter);
 
 app.get('/', (_req, res) => {
